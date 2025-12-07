@@ -2,7 +2,8 @@
   import Welcome from './components/pages/Welcome.vue';
   import Layout from './components/layouts/Layout.vue';
   import Dashboard from './components/pages/Dashboard.vue';
-
+  import Workout from './components/pages/Workout.vue';
+  
   import { ref, computed, onMounted } from 'vue'
   import { workoutProgram } from './utils'
 
@@ -91,6 +92,8 @@
 
     <!-- page 2 -->
      <Dashboard :handleResetPlan="handleResetPlan" :firstIncompleteWorkoutIndex="firstIncompleteWorkoutIndex" :handleSelectWorkout="handleSelectWorkout" v-if="selectedDisplay == 2" />
+    <!-- page 3 -->
+    <Workout :handleSaveWorkout="handleSaveWorkout" :isWorkoutComplete="isWorkoutComplete" :data="data" :selectedWorkout="selectedWorkout" v-if="workoutProgram?.[selectedWorkout]"/>
 
   </Layout>
   
